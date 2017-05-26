@@ -1,0 +1,32 @@
+<h1>{{title}}</h1>
+
+<div ng-controller="mainController">
+
+    <div>
+        <button ng-click="changeSort('score')">Sort by highest tag score</button>
+    </div>
+    </br>
+    <div>
+        <button ng-click="updateUser(1)">User 1 </button>
+        <button ng-click="updateUser(2)">User 2 </button>
+        <button ng-click="updateUser(3)">User 3 </button>
+        <button ng-click="updateUser(4)">User 4 </button>
+    </div>
+
+
+    <div ng-repeat="image in images" class="contain item-[[$index]]">
+        <div class="details">
+            <h3>Tags : [[image.tags]]</h3>
+            <p>Highest score [[image.score]]</p>
+            <p>Total score [[image.totalScore]]</p>
+        </div>
+        <img ng-src="[[image.url]]" alt="Destination image" class="image"/>
+    </div>
+
+</div>
+
+
+<script src="//code.jquery.com/jquery-3.1.1.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="javascripts/index.js"></script>
+<script src="javascripts/controllers.js"></script>
